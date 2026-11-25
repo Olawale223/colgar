@@ -1,0 +1,49 @@
+.main {
+  min-height: calc(100vh - 150px);
+  display: grid;
+  place-items: center;
+  padding: 48px 24px;
+  background: #f8f5f2;
+}
+
+.card {
+  width: min(460px, 100%);
+  padding: clamp(26px, 5vw, 48px);
+  border: 1px solid var(--line);
+  background: var(--paper);
+  box-shadow: 0 20px 60px rgba(65, 23, 24, 0.08);
+}
+
+.card h1 {
+  margin: 14px 0 8px;
+  font: 400 clamp(36px, 8vw, 52px)/1.05 var(--display);
+}
+
+.card > p {
+  color: var(--muted);
+  font-size: 13px;
+}
+
+.notice,
+.error {
+  margin: 18px 0 0;
+  padding: 12px;
+  border-left: 3px solid var(--brand-primary);
+  color: var(--muted);
+  background: #fff7f2;
+  font-size: 11px;
+}
+
+.error {
+  border-color: #b63e32;
+  color: #8e2d27;
+  background: #fff2ef;
+}
+
+.returnLink {
+  display: inline-block;
+  margin-top: 20px;
+  color: var(--brand-wine);
+  font-size: 12px;
+  font-weight: 700;
+}

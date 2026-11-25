@@ -1,0 +1,67 @@
+.purchase {
+  display: grid;
+  gap: 18px;
+  margin-top: 25px;
+}
+
+.field,
+.quantityField {
+  display: grid;
+  gap: 7px;
+}
+
+.field label,
+.quantityField label {
+  color: var(--brand-dark);
+  font-size: 10px;
+  font-weight: 700;
+}
+
+.field select,
+.quantityField input {
+  width: 100%;
+  min-height: 46px;
+  padding: 0 12px;
+  border: 1px solid var(--line);
+  border-radius: 2px;
+  color: var(--ink);
+  background: white;
+  font-size: 12px;
+}
+
+.field select:focus,
+.quantityField input:focus {
+  outline: 2px solid var(--rust);
+  outline-offset: 2px;
+}
+
+.impact {
+  margin: 0;
+  color: var(--muted);
+  font-size: 11px;
+}
+
+.addButton {
+  width: 100%;
+  justify-content: space-between;
+  margin-top: 2px;
+}
+
+.addButton:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+}
+
+.feedback {
+  min-height: 21px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 15px;
+  color: var(--brand-brown);
+  font-size: 11px;
+}
+
+.feedback a {
+  font-weight: 700;
+}

@@ -1,0 +1,162 @@
+.scope {
+  min-width: 0;
+}
+
+.scope :global(.shop-note) {
+  margin: 25px 0 0;
+  color: var(--muted);
+  font-size: 10px;
+}
+
+.scope :global(.center-note) {
+  text-align: center;
+}
+
+.scope :global(.donation-grid),
+.scope :global(.volunteer-grid) {
+  display: grid;
+  grid-template-columns: 1fr 0.85fr;
+  align-items: start;
+  gap: 48px;
+}
+
+.scope :global(.donation-copy h2),
+.scope :global(.volunteer-copy h2) {
+  margin: 10px 0 16px;
+  font: 42px/1.1 var(--display);
+}
+
+.scope :global(.donation-copy > p),
+.scope :global(.volunteer-copy > p) {
+  max-width: 560px;
+  color: var(--muted);
+  font-size: 13px;
+}
+
+.scope :global(.donation-choices) {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+  margin: 24px 0;
+}
+
+.scope :global(.donation-choice) {
+  padding: 18px;
+  border: 1px solid var(--line);
+  background: white;
+}
+
+.scope :global(.donation-choice strong) {
+  display: block;
+  color: var(--brand-brown);
+  font: 22px var(--display);
+}
+
+.scope :global(.donation-choice span) {
+  display: block;
+  margin-top: 5px;
+  color: var(--muted);
+  font-size: 9px;
+}
+
+.scope :global(.donation-panel),
+.scope :global(.volunteer-panel) {
+  padding: 30px;
+  border: 1px solid var(--line);
+  background: white;
+}
+
+.scope :global(.donation-panel h3),
+.scope :global(.volunteer-panel h3) {
+  margin: 0 0 12px;
+  font: 26px var(--display);
+}
+
+.scope :global(.donation-panel > p),
+.scope :global(.volunteer-panel > p) {
+  color: var(--muted);
+  font-size: 11px;
+}
+
+.scope :global(.donation-panel ul),
+.scope :global(.volunteer-panel ul) {
+  margin: 18px 0 22px;
+  padding-left: 18px;
+  color: var(--muted);
+  font-size: 10px;
+}
+
+.scope :global(.donation-panel li),
+.scope :global(.volunteer-panel li) {
+  margin: 7px 0;
+}
+
+.scope :global(.donation-panel .button),
+.scope :global(.volunteer-panel .button) {
+  width: 100%;
+}
+
+.scope :global(.preview-notice) {
+  margin-top: 13px;
+  color: var(--muted);
+  font-size: 9px;
+}
+
+.scope :global(.role-tags) {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 20px;
+}
+
+.scope :global(.role-tags span) {
+  padding: 7px 10px;
+  border: 1px solid var(--line);
+  background: var(--paper-light);
+  color: var(--brand-brown);
+  font-size: 9px;
+}
+
+.scope :global(.volunteer-panel + .volunteer-panel) {
+  margin-top: 14px;
+}
+
+.scope :global(.volunteer-panel .eyebrow) {
+  margin-bottom: 10px;
+}
+
+@media (max-width: 920px) {
+  .scope :global(.donation-grid),
+  .scope :global(.volunteer-grid) {
+    gap: 32px;
+  }
+}
+
+@media (max-width: 620px) {
+  .scope :global(.donation-grid),
+  .scope :global(.volunteer-grid) {
+    grid-template-columns: 1fr;
+  }
+
+  .scope :global(.donation-grid > *),
+  .scope :global(.volunteer-grid > *),
+  .scope :global(.donation-panel),
+  .scope :global(.volunteer-panel) {
+    min-width: 0;
+  }
+
+  .scope :global(.donation-panel .button),
+  .scope :global(.volunteer-panel .button) {
+    gap: 8px;
+    padding-inline: 12px;
+    white-space: normal;
+    text-align: center;
+  }
+
+}
+
+@media (max-width: 375px) {
+  .scope :global(.donation-choices) {
+    grid-template-columns: 1fr;
+  }
+}

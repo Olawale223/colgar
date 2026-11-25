@@ -1,0 +1,108 @@
+.page {
+  display: contents;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+}
+
+.page :global(.campaign-featured) {
+  display: grid;
+  grid-template-columns: 0.9fr 1.1fr;
+  min-height: 340px;
+  margin-bottom: 76px;
+  overflow: hidden;
+  color: var(--paper);
+  background: var(--brand-dark);
+}
+
+.page :global(.campaign-featured-image) {
+  position: relative;
+  min-height: 340px;
+  overflow: hidden;
+}
+
+.page :global(.campaign-featured-image img) {
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.45s ease;
+}
+
+.page :global(.campaign-featured:hover .campaign-featured-image img) {
+  transform: scale(1.035);
+}
+
+.page :global(.campaign-featured-copy) {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 38px clamp(25px, 5vw, 65px);
+}
+
+.page :global(.campaign-featured-label) {
+  color: var(--brand-blush);
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.page :global(.campaign-featured-copy h2) {
+  margin: 15px 0 10px;
+  color: var(--paper);
+  font: 45px/1.02 var(--display);
+}
+
+.page :global(.campaign-featured-copy h2 em) {
+  color: var(--brand-blush);
+}
+
+.page :global(.campaign-featured-copy p) {
+  max-width: 430px;
+  margin-bottom: 19px;
+  color: var(--brand-soft);
+  font-size: 12px;
+}
+
+.page :global(.campaign-featured-link) {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  padding-top: 12px;
+  border-top: 1px solid rgba(254, 253, 253, 0.25);
+  color: var(--paper);
+  font-size: 10px;
+  font-weight: 700;
+}
+
+.page :global(.campaign-featured-link b) {
+  color: var(--brand-blush);
+  font-size: 14px;
+}
+
+@media (max-width: 620px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+
+  .page :global(.campaign-featured) {
+    grid-template-columns: 1fr;
+    margin-bottom: 52px;
+  }
+
+  .page :global(.campaign-featured-image) {
+    height: 220px;
+    min-height: 220px;
+  }
+
+  .page :global(.campaign-featured-copy) {
+    padding: 25px 20px;
+  }
+
+  .page :global(.campaign-featured-copy h2) {
+    font-size: 38px;
+  }
+}

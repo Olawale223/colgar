@@ -1,0 +1,83 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "colgar-public",
+  "main": "worker.ts",
+  "compatibility_date": "2025-03-20",
+  "compatibility_flags": [
+    "nodejs_compat",
+    "nodejs_compat_populate_process_env"
+  ],
+  "assets": {
+    "directory": ".open-next/assets",
+    "binding": "ASSETS"
+  },
+  "services": [
+    {
+      "binding": "WORKER_SELF_REFERENCE",
+      "service": "colgar-public"
+    }
+  ],
+  "images": {
+    "binding": "IMAGES"
+  },
+  "vars": {
+    "APP_ROLE": "public",
+    "MONGODB_DB": "colgar",
+    "CLOUDFLARE_ACCESS_TEAM_DOMAIN": "https://YOUR_TEAM.cloudflareaccess.com",
+    "CLOUDFLARE_ACCESS_AUD": "YOUR_ADMIN_APPLICATION_AUD_TAG",
+    "NEXT_PUBLIC_SITE_URL": "https://www.colgar.org"
+  },
+  "durable_objects": {
+    "bindings": [
+      {
+        "name": "MONGODB_CONNECTION",
+        "class_name": "MongoDBConnection"
+      }
+    ]
+  },
+  "migrations": [
+    {
+      "tag": "v1",
+      "new_sqlite_classes": ["MongoDBConnection"]
+    }
+  ],
+  "env": {
+    "admin": {
+      "name": "colgar-admin",
+      "vars": {
+        "APP_ROLE": "admin",
+        "MONGODB_DB": "colgar",
+        "CLOUDFLARE_ACCESS_TEAM_DOMAIN": "https://YOUR_TEAM.cloudflareaccess.com",
+        "CLOUDFLARE_ACCESS_AUD": "YOUR_ADMIN_APPLICATION_AUD_TAG",
+        "NEXT_PUBLIC_SITE_URL": "https://www.colgar.org"
+      },
+      "assets": {
+        "directory": ".open-next/assets",
+        "binding": "ASSETS"
+      },
+      "services": [
+        {
+          "binding": "WORKER_SELF_REFERENCE",
+          "service": "colgar-admin"
+        }
+      ],
+      "images": {
+        "binding": "IMAGES"
+      },
+      "durable_objects": {
+        "bindings": [
+          {
+            "name": "MONGODB_CONNECTION",
+            "class_name": "MongoDBConnection"
+          }
+        ]
+      },
+      "migrations": [
+        {
+          "tag": "v1",
+          "new_sqlite_classes": ["MongoDBConnection"]
+        }
+      ]
+    }
+  }
+}

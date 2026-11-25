@@ -1,0 +1,32 @@
+.main {
+  min-height: 60vh;
+  display: grid;
+  place-items: center;
+  padding: 48px 24px;
+}
+
+.main section {
+  width: min(620px, 100%);
+  padding: clamp(24px, 5vw, 48px);
+  border: 1px solid var(--line);
+  background: #fff;
+}
+
+.main h1 {
+  margin: 14px 0;
+  font: 400 clamp(34px, 7vw, 52px)/1.05 var(--display);
+}
+
+.main p {
+  color: var(--muted);
+}
+
+.main button {
+  min-height: 46px;
+  padding-inline: 20px;
+  border: 0;
+  color: #fff;
+  background: var(--brand-wine);
+  font-weight: 700;
+  cursor: pointer;
+}

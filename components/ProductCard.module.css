@@ -1,0 +1,59 @@
+.card {
+  border: 1px solid var(--line);
+  background: white;
+}
+
+.image {
+  position: relative;
+  display: block;
+  aspect-ratio: 1 / 1;
+  overflow: hidden;
+  background: var(--paper-deep);
+}
+
+.imagePhoto {
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.card:hover .imagePhoto {
+  transform: scale(1.04);
+}
+
+.info {
+  padding: 15px 16px 18px;
+}
+
+.info h2 {
+  margin: 0 0 8px;
+  font: 21px/1.2 var(--display);
+}
+
+.price {
+  color: var(--brand-brown);
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.link {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 14px;
+  padding-top: 11px;
+  border-top: 1px solid var(--line);
+  color: var(--brand-brown);
+  font-size: 9px;
+  font-weight: 700;
+}
+
+@media (max-width: 620px) {
+  .info {
+    padding: 12px;
+  }
+
+  .info h2 {
+    font-size: 18px;
+  }
+}

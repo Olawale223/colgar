@@ -1,0 +1,66 @@
+.card {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid var(--line);
+  background: white;
+}
+
+.image {
+  position: relative;
+  display: block;
+  aspect-ratio: 1.45 / 1;
+  overflow: hidden;
+  background: var(--paper-deep);
+}
+
+.imagePhoto {
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.card:hover .imagePhoto {
+  transform: scale(1.04);
+}
+
+.copy {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  padding: 17px;
+}
+
+.meta {
+  color: var(--brand-primary);
+  font-size: 8px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.copy h2 {
+  margin: 9px 0;
+  font: 23px/1.15 var(--display);
+}
+
+.copy p {
+  margin-bottom: 16px;
+  color: var(--muted);
+  font-size: 10px;
+}
+
+.copy :global(.text-link) {
+  margin-top: auto;
+  padding-top: 12px;
+  border-top: 1px solid var(--line);
+}
+
+@media (max-width: 620px) {
+  .copy {
+    padding: 12px;
+  }
+
+  .copy h2 {
+    font-size: 18px;
+  }
+}

@@ -1,0 +1,96 @@
+.page {
+  display: contents;
+}
+
+.page :global(.event-panel) {
+  display: grid;
+  grid-template-columns: 1fr 0.85fr;
+  border: 1px solid var(--line);
+  background: white;
+}
+
+.page :global(.event-panel-image) {
+  position: relative;
+  min-height: 400px;
+}
+
+.page :global(.event-panel-image img) {
+  height: 100%;
+  object-fit: cover;
+}
+
+.page :global(.event-panel-copy) {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 42px;
+}
+
+.page :global(.event-panel-copy h2) {
+  margin: 9px 0 12px;
+  font: 40px/1.1 var(--display);
+}
+
+.page :global(.event-panel-copy > p) {
+  color: var(--muted);
+  font-size: 12px;
+}
+
+.page :global(.event-facts) {
+  margin: 17px 0 22px;
+  border-top: 1px solid var(--line);
+}
+
+.page :global(.event-fact) {
+  display: flex;
+  justify-content: space-between;
+  gap: 14px;
+  padding: 11px 0;
+  border-bottom: 1px solid var(--line);
+  font-size: 10px;
+}
+
+.page :global(.event-fact span:first-child) {
+  color: var(--muted);
+}
+
+.page :global(.event-fact strong) {
+  text-align: right;
+}
+
+.page :global(.event-past) {
+  align-self: flex-start;
+  padding: 6px 10px;
+  color: var(--brand-wine);
+  background: var(--paper-deep);
+  font-size: 8px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.page :global(.editorial-note) {
+  max-width: 720px;
+  margin: 55px auto 0;
+  color: var(--muted);
+  font: 25px/1.35 var(--display);
+  text-align: center;
+}
+
+@media (max-width: 620px) {
+  .page :global(.event-panel) {
+    grid-template-columns: 1fr;
+  }
+
+  .page :global(.event-panel-image) {
+    min-height: 240px;
+  }
+
+  .page :global(.event-panel-copy) {
+    padding: 24px 20px;
+  }
+
+  .page :global(.event-panel-copy h2) {
+    font-size: 34px;
+  }
+}

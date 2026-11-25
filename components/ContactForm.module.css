@@ -1,0 +1,71 @@
+.form {
+  padding: 27px;
+  color: var(--ink);
+  background: var(--paper-light);
+}
+
+.intro {
+  margin-bottom: 20px;
+  font: 23px var(--display);
+}
+
+.form label {
+  display: block;
+  margin: 14px 0 5px;
+  color: var(--muted);
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+}
+
+.form input {
+  width: 100%;
+  min-height: 38px;
+  padding: 7px 0;
+  border: 0;
+  border-bottom: 1px solid var(--line);
+  border-radius: 0;
+  outline: none;
+  color: var(--ink);
+  background: transparent;
+  font-size: 11px;
+}
+
+.form input:focus {
+  border-color: var(--rust);
+}
+
+.form input::placeholder {
+  color: #aaa092;
+}
+
+.row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 19px;
+}
+
+.submit {
+  width: 100%;
+  margin-top: 24px;
+  color: white;
+  background: var(--brand-wine);
+  cursor: pointer;
+}
+
+.submit:hover {
+  background: var(--rust);
+}
+
+.note {
+  margin: 10px 0 0;
+  color: var(--muted);
+  font-size: 9px;
+}
+
+@media (max-width: 620px) {
+  .form {
+    padding: 22px 18px;
+  }
+}
