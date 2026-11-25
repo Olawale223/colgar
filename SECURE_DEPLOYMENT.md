@@ -25,12 +25,14 @@ The public website and Admin Studio share this Next.js codebase but deploy as se
 
    Supported roles are `admin`, `content_editor`, and `finance_manager`. Set `enabled` to `false` in the staff record to revoke application access.
 
-## 2. Configure Cloudflare Access
+## 2. Configure Google sign-in through Cloudflare Access
 
-1. Create a Cloudflare Access self-hosted application for the private Admin Studio hostname (for example `admin.colgar.org`).
-2. Add an allow policy limited to approved staff identities and require MFA in the Access policy. Apply the MFA requirement to the entire Admin Studio application; finance authorization is role-checked again by the server.
-3. Copy the Access team domain and application audience tag into `CLOUDFLARE_ACCESS_TEAM_DOMAIN` and `CLOUDFLARE_ACCESS_AUD` in `wrangler.jsonc` and `.env.local`. The API verifies the signed Access JWT issuer and audience and then looks up the enabled staff role in MongoDB.
-4. Keep MongoDB, Paystack, Resend, and rate-limit secrets in Cloudflare Worker secrets. Never add them to `vars`, source code, or client-visible `NEXT_PUBLIC_` variables.
+1. In Google Cloud Console, create an OAuth client with application type **Web application**. Set the authorized JavaScript origin to `https://<team-name>.cloudflareaccess.com` and the authorized redirect URI to `https://<team-name>.cloudflareaccess.com/cdn-cgi/access/callback`.
+2. In Cloudflare Zero Trust, go to **Integrations > Identity providers**, add **Google**, and enter the OAuth client ID and client secret. Keep the client secret in Cloudflare's identity-provider settings; never put it in this repository.
+3. Create a Cloudflare Access self-hosted application for the private Admin Studio hostname (for example `admin.colgar.org`) and enable Google as its login method.
+4. Add an allow policy limited to approved staff identities and require MFA in the Access policy. Apply the MFA requirement to the entire Admin Studio application; finance authorization is role-checked again by the server.
+5. Copy the Access team domain, including the `https://` scheme, and the application audience tag into `CLOUDFLARE_ACCESS_TEAM_DOMAIN` and `CLOUDFLARE_ACCESS_AUD` in `wrangler.jsonc` and `.env.local`. The API verifies the signed Access JWT issuer and audience and then looks up the enabled staff role in MongoDB. The Google account's email must match the staff record.
+6. Keep MongoDB, Paystack, Resend, rate-limit, and Google OAuth client secrets out of `vars`, source code, and client-visible `NEXT_PUBLIC_` variables. Store Worker secrets with Wrangler; store the Google OAuth client secret in Cloudflare Zero Trust's identity-provider settings.
 
 ## 3. Deploy the two Workers
 
