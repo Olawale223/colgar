@@ -23,9 +23,9 @@
   "vars": {
     "APP_ROLE": "public",
     "MONGODB_DB": "colgar",
-    "CLOUDFLARE_ACCESS_TEAM_DOMAIN": "https://YOUR_TEAM.cloudflareaccess.com",
-    "CLOUDFLARE_ACCESS_AUD": "YOUR_ADMIN_APPLICATION_AUD_TAG",
-    "NEXT_PUBLIC_SITE_URL": "https://www.colgar.org"
+    "CLOUDFLARE_ACCESS_TEAM_DOMAIN": "lively-breeze-aa37.cloudflareaccess.com",
+    "CLOUDFLARE_ACCESS_AUD": "4655acea-33c4-43c7-84ef-52eada47836a",
+    "NEXT_PUBLIC_SITE_URL": "colgar.lawalabdullateef16.workers.dev"
   },
   "durable_objects": {
     "bindings": [
@@ -47,9 +47,9 @@
       "vars": {
         "APP_ROLE": "admin",
         "MONGODB_DB": "colgar",
-        "CLOUDFLARE_ACCESS_TEAM_DOMAIN": "https://YOUR_TEAM.cloudflareaccess.com",
-        "CLOUDFLARE_ACCESS_AUD": "YOUR_ADMIN_APPLICATION_AUD_TAG",
-        "NEXT_PUBLIC_SITE_URL": "https://www.colgar.org"
+        "CLOUDFLARE_ACCESS_TEAM_DOMAIN": "lively-breeze-aa37.cloudflareaccess.com",
+        "CLOUDFLARE_ACCESS_AUD": "4655acea-33c4-43c7-84ef-52eada47836a",
+        "NEXT_PUBLIC_SITE_URL": "colgar.lawalabdullateef16.workers.dev"
       },
       "assets": {
         "directory": ".open-next/assets",
