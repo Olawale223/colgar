@@ -95,3 +95,4 @@ The adapter's Worker build/deploy commands are used instead of `next start` for 
 - Finance endpoints require an enabled `admin` or `finance_manager` staff record. Admin write operations are recorded in the MongoDB audit collection. MongoDB Atlas credentials must be least-privilege and rotated using Cloudflare secrets.
 - Newsletter signup uses confirmation and unsubscribe tokens. Sending remains direct and capped at 500 confirmed subscribers per request; larger lists should use a queue.
 - No live Atlas, Cloudflare Access, Paystack, or Resend credentials were present in this workspace. Run a deployed end-to-end test after provider configuration.
+d
